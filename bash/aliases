@@ -1,0 +1,71 @@
+# mate
+alias matew='mate -w'
+
+# cd
+alias ..='cd ..'
+
+# ls
+alias ls="ls -F"
+alias l="ls -lAh"
+alias ll="ls -l"
+alias la='ls -A'
+
+# git
+alias glr='git pull --rebase'
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gde='gd | matew'
+alias gdce='gdc | matew'
+alias gc='git commit -v'
+alias gca='git commit -va'
+alias gb='git branch -v'
+alias gs='git status'
+alias gss='git status -sb'
+alias gls='git log --oneline --decorate'
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias git='hub'
+
+function gco {
+  if [ -z "$1" ]; then
+    git checkout master
+  else
+    git checkout $1
+  fi
+}
+
+# usage:
+#   $ superblame Mislav [<from>..<to>]
+function superblame {
+  git log --format=%h --author=$1 $2 | \
+    xargs -L1 -ISHA git diff --shortstat 'SHA^..SHA' app config/environment* config/initializers/ public/stylesheets/ | \
+    ruby -e 'n=Hash.new(0); while gets; i=0; puts $_.gsub(/\d+/){ n[i+=1] += $&.to_i }; end' | tail -n1
+}
+
+# rails
+alias sc='script/console'
+alias ss='script/server'
+alias sg='script/generate'
+alias a='autotest -rails'
+alias tlog='tail -f log/development.log'
+alias scaffold='script/generate nifty_scaffold'
+alias migrate='rake db:migrate db:test:clone'
+alias rst='touch tmp/restart.txt'
+alias be='bundle exec'
+alias cleardb='be rake db:drop db:create db:schema:load db:seed && be rake db:test:clone'
+
+# changing directory to code project
+function c { cd ~/code/$1; }
+
+# misc
+alias reload='. ~/.bash_profile'
+
+alias time='gtime -f "%e %U %S %P" '
+
+alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
+alias preview='open -a Preview -f'
+alias pg='postgres -D /usr/local/var/postgres/'
+
+alias tunnel='ssh -D 8080 -f -C -q -N'
+
