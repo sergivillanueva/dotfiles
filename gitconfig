@@ -10,7 +10,6 @@
 	branch = auto
 [core]
 	excludesfile = /Users/enric/.gitignore
-	editor = mate -w
 [apply]
 	whitespace = nowarn
 [pull]
