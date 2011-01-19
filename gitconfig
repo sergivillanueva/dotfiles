@@ -10,6 +10,7 @@
 	branch = auto
 [core]
 	excludesfile = /Users/enric/.gitignore
+  editor = vim
 [apply]
 	whitespace = nowarn
 [pull]
@@ -18,3 +19,10 @@
 	default = tracking
 [github]
   user = enriclluelles
+[branch]
+	autosetuprebase = always
+[merge]
+  tool = mvim
+[mergetool "mvim"]
+  cmd=mvim -d -g $LOCAL $MERGED $REMOTE
+  keepbackup=false
