@@ -1,4 +1,10 @@
 .DS_Store
 .svn
 *~
-*[LOCAL|REMOTE|BACKUP]*
+*BACKUP*
+*REMOTE*
+*LOCAL*
+*BASE*
+*.orig
+*.log
+config/unicorn.rb
