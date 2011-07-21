@@ -7,4 +7,3 @@
 *BASE*
 *.orig
 *.log
-config/unicorn.rb
