@@ -1,1 +1,4 @@
 color molokai
+if ostype =~ "darwin"
+  set guifont=Monaco:h12
+endif

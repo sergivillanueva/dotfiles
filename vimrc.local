@@ -1,1 +1,2 @@
 color robokai
+let ostype = system("echo $OSTYPE")
