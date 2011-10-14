@@ -22,7 +22,7 @@
 [branch]
 	autosetuprebase = always
 [merge]
-  tool = mvim
-[mergetool "mvim"]
-  cmd=mvim -d -g $LOCAL $MERGED $REMOTE
+  tool = custom
+[mergetool "custom"]
+  cmd=$EDITOR -d -g $LOCAL $MERGED $REMOTE
   keepbackup=false
