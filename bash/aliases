@@ -68,3 +68,6 @@ alias pg='postgres -D /usr/local/var/postgres/'
 
 alias tunnel='ssh -D 8080 -f -C -q -N'
 
+
+# ubuntu resets path when sudoing
+alias sudo='sudo env PATH=$PATH'
