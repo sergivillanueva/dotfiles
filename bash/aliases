@@ -1,10 +1,3 @@
-#aliasing gvim to mvim if this is not a mac
-if [[ $OSTYPE == *linux* ]]
-then
-  alias mvim='gvim';
-fi;
-
-
 # mate
 alias matew='mate -w'
 
