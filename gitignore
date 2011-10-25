@@ -7,3 +7,4 @@
 *BASE*
 *.orig
 *.log
+.sass-cache
