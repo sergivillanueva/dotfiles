@@ -19,6 +19,7 @@
 	default = tracking
 [github]
   user = enriclluelles
+  token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
 [branch]
 	autosetuprebase = always
 [merge]
