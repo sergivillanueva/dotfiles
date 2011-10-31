@@ -1,10 +1,6 @@
 .DS_Store
 .svn
 *~
-*BACKUP*
-*REMOTE*
-*LOCAL*
-*BASE*
 *.orig
 *.log
 .sass-cache
