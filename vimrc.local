@@ -2,3 +2,4 @@ color robokai
 let ostype = system("echo $OSTYPE")
 set foldmethod=indent
 set foldlevel=10
+let $JS_CMD = 'node'
