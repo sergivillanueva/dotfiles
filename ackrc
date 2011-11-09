@@ -1,0 +1,23 @@
+# only search with case sensitivity if there is mixed case
+--smart-case
+# follow symlinks
+--follow
+
+# ignore dirs
+--ignore-dir=cache
+--ignore-dir=tmp
+
+#ruby files
+--type-add=ruby=.ru,.rake,.gemspec
+
+#ruby templates
+--type-add=ruby=.haml,.slim
+
+#js templates
+--type-add=js=.jade
+
+#css
+--type-add=css=.sass,.scss
+
+--sort-files
+--color
