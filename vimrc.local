@@ -1,4 +1,4 @@
-color robokai
+color molokai
 let ostype = system("echo $OSTYPE")
 set foldmethod=indent
 set foldlevel=10
