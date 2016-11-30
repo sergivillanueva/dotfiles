@@ -3,12 +3,41 @@ alias matew='mate -w'
 
 # cd
 alias ..='cd ..'
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
 
 # ls
 alias ls="ls -F"
 alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'
+
+# List all files colorized in long format
+alias l="ls -lF ${colorflag}"
+
+# List all files colorized in long format, including dot files
+alias la="ls -laF ${colorflag}"
+
+# List only directories
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+# Always use color output for `ls`
+alias ls="command ls ${colorflag}"
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
 
 # git
 alias glr='git pull --rebase'
@@ -25,7 +54,6 @@ alias gs='git status'
 alias gss='git status -sb'
 alias gls='git log --oneline --decorate'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-alias git='hub'
 
 function gco {
   if [ -z "$1" ]; then
@@ -61,13 +89,23 @@ function c { cd ~/code/$1; }
 # misc
 alias reload='. ~/.bash_profile'
 
-
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 alias preview='open -a Preview -f'
 alias pg='postgres -D /usr/local/var/postgres/'
 
 alias tunnel='ssh -D 8080 -f -C -q -N'
 
-
 # ubuntu resets path when sudoing
 alias sudo='sudo env PATH=$PATH'
+
+# Intuitive map function
+# For example, to list all directories that contain a certain file:
+# find . -name .gitattributes | map dirname
+alias map="xargs -n1"
+
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
