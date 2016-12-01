@@ -19,9 +19,12 @@
 	default = tracking
 [github]
   user = sergivillanueva
-  token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
 [branch]
 	autosetuprebase = always
+[tig]
+  line-graphics = "utf-8"
+  main-view = id:yes date:relative author:yes commit-title:yes,graph=yes,refs=yes,overflow=yes
+  vertical-split = no
 [merge]
   tool = custom
 [mergetool "custom"]
