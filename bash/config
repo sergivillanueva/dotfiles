@@ -5,7 +5,6 @@ else
   export EDITOR="mvim"
 fi
 
-
 export CLICOLOR=1
 export LSCOLORS=bxfxcxdxbxegebabagacad
 
@@ -19,7 +18,7 @@ function __git_branch {
 }
 
 function __my_ruby_version {
-  echo "$(rbenv version | awk -F'-' '{print $1}')"
+  echo "$(rbenv version | awk -F' ' '{print $1}')"
 }
 
 # via http://tammersaleh.com/posts/a-better-rvm-bash-prompt
@@ -38,8 +37,7 @@ bash_prompt() {
 
   local UC=$W                 # user's color
   [ $UID -eq "0" ] && UC=$R   # root's color
-
-  PS1="$W\$(__my_ruby_version)$R\w $Y\$(__git_branch)$R\$(__git_dirty)${NONE}$ "
+  PS1="$C\$(__my_ruby_version)$R\w $Y\$(__git_branch)$R\$(__git_dirty)${NONE}$ "
 }
 
 bash_prompt
